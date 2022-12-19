@@ -4,11 +4,22 @@
 // 32679 ->6
 
 
+
 Console.Write("ВВедите число N = "); 
-int N = int.Parse(Console.ReadLine()); 
-
+int N = int.Parse(Console.ReadLine()!); 
 int a = N/10;
-int b = N%10;
-int a1 = a%10;
+int b = 1;
 
-Console.WriteLine("Вторая цифра = " + a1);
+while ( a != 0 )
+{
+    a = a+b;
+    b++;
+    Console.WriteLine("Сколько чисел" + a);
+}
+if ( b < 3 )
+{
+    Console.WriteLine("Отсутсвует 3 цыфра в числе");
+}
+
+
+

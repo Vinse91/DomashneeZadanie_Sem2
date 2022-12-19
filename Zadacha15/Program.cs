@@ -4,27 +4,29 @@
 // 1 -> нет
 
 
-Console.Write("Введите номер дня недели: ");
-int a = int.Parse(Console.ReadLine());
+Console.Write("Введите число: ");
+int a = Math.Abs(int.Parse(Console.ReadLine()));
+int a1 = a;
+int count = 0;
 
-
-while (a > 7 || a < 1) 
+while (a1 > 0)
 {
-    if (a > 7 || a < 1)
+    a1 /= 10;
+    count++;
+}
+
+if (count - 3 >= 0)
+{
+    while (count - 3 > 0)
     {
-        Console.WriteLine("Введены не корректные данные, введите номер дня недели от 1 до 7");
-        Console.Write("Введите номер дня недели: ");
-        a = int.Parse(Console.ReadLine());
-        
+        a = a / 10;
+        count--;
+
     }
-}
+    Console.WriteLine($"Третья цифра {a%10}");
 
-if (a == 6 || a == 7) 
-{
-    Console.WriteLine("Сидим дома");
 }
-
 else
 {
-    Console.WriteLine("Пора на работу");
+    Console.WriteLine("Третьей цифры нет");
 }
