@@ -5,21 +5,29 @@
 
 
 
-Console.Write("ВВедите число N = "); 
-int N = int.Parse(Console.ReadLine()!); 
-int a = N/10;
-int b = 1;
+Console.Write("ВВедите число  = "); 
+int a = Math.Abs(int.Parse(Console.ReadLine()!));
+int a1 = a;
+int count = 0;
 
-while ( a != 0 )
+while (a1 > 0)
 {
-    a = a+b;
-    b++;
-    Console.WriteLine("Сколько чисел" + a);
-}
-if ( b < 3 )
-{
-    Console.WriteLine("Отсутсвует 3 цыфра в числе");
+    a1 /= 10;
+    count++;
 }
 
+if (count - 3 >= 0)
+{
+    while (count -3 >0)
+    {
+        a = a/10;
+        count--;
 
+    }
+    Console.WriteLine($"Третья цыфра {a%10}");
+}
+else
+{
+    Console.WriteLine("Третьей цифры нет");
 
+}
